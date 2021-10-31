@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "629129548005",
+    "project_id": "fhossain6-hw3",
+    "storage_bucket": "fhossain6-hw3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629129548005:android:6936679ee2e3f1771f840c",
+        "android_client_info": {
+          "package_name": "com.example.hw3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629129548005-eobquevlaqkcj1qa1efcfg8mbhfvim9q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhgKs0dcd_FxRbvLKcdBh0yCep_O6aHg4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "629129548005-eobquevlaqkcj1qa1efcfg8mbhfvim9q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
