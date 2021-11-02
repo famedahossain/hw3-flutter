@@ -1,4 +1,4 @@
-# Mobile App Development Homework 3 
+# Mobile App Development Homework 3
 
 This project aims to create a Firebase chat application.
 
@@ -34,7 +34,7 @@ This method also allows for users to verify their email and sign out.
 
 ● Each chat has the recent message, their profile picture, and the time it was last sent.
 
-● When you click on a message, the chat page pops up.
+● When you click on a message, the chat page pops up and displays messages.
 
 ● My App works for Android and iOS.
 
