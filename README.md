@@ -1,4 +1,4 @@
-# Mobile App Development Homework 3
+# Mobile App Development Homework 3 
 
 This project aims to create a Firebase chat application.
 
