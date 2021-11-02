@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
+import 'chat.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -38,68 +39,28 @@ class _HomePageState extends State<HomePage> {
             )
           ]
       ),
-
-      body:
-      StreamBuilder(
-        stream: FirebaseFirestore.instance.collection('user').snapshots(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (!snapshot.hasData) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-          return ListView(
-            children: snapshot.data!.docs.map((document) {
-              return Container(
-                height: 60,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                ),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        child:
-                        document['url'].length > 1 ?
-                        Image.network(document['url'], height: 45, width: 45,) :
-                        Image.asset('assets/defaultUserPicture.png', height: 45, width: 45,),
-                      ),
-                      Container(
-                        child: Text( document['first_name']),
-                        padding: EdgeInsets.all(7),
-                      ),
-                      Container(
-                        child: Text( document['register_date']),
-                        padding: EdgeInsets.all(2),
-                      ),
-
-                      Container(
-                        child: RaisedButton.icon(
-                            onPressed: () async {
-                              setState(() {
-                                age = document['age'];
-                                bio = document['bio'];
-                                hometown = document['hometown'];
-                                name = document['first_name'];
-                                img = document['url'];
-                              });
-                              Navigator.push(
-                                  context,MaterialPageRoute(builder: (context) =>
-                                  UserView(age, img, name, bio, hometown,
-                                  )));
-                            },
-                            icon: Icon(Icons.account_circle_outlined ) , label: Text('Visit User')),
-                      )
-                    ]
-                ),
-                margin:EdgeInsets.all(5),
-              );
-            }).toList(),
-          );
-        },
+      body: Chat(),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.lime.shade400,
+        unselectedItemColor: Colors.blue,
+        selectedLabelStyle: TextStyle(fontWeight: FontWeight.w500),
+        unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w500),
+        type: BottomNavigationBarType.fixed,
+        items: [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.message),
+          title: Text("Chats"),
+          ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.group_work),
+          title: Text("Channels"),
+          ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.account_box),
+          title: Text("Profile"),
+          ),
+        ],
       ),
-
-
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {

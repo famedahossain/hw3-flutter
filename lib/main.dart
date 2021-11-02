@@ -57,7 +57,7 @@ class Splash2 extends StatelessWidget {
     return SplashScreen(
       seconds: 6,
       navigateAfterSeconds: AppDriver(),
-      title: new Text('Midterm App',textScaleFactor: 2,),
+      title: new Text('Homework 3 Chat App',textScaleFactor: 2,),
       image: new Image.asset('assets/IMG_9296.jpg',),
       loadingText: Text("Loading"),
       photoSize: 200.0,
